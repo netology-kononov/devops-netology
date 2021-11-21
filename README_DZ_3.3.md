@@ -67,4 +67,4 @@ ps -axo stat | grep I | wc -l
 47  
 ps -axo stat | grep R | wc -l  
 1  
-статус S - спящий процесс.  
+статус S - процесс в состоянии ожидания (sleeping).  
