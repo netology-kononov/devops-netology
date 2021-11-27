@@ -28,15 +28,15 @@ NE_ARG=--help
 > передал сервису параметр --help через конфигурационный файл  
 
 **1.3 удостоверьтесь, что с помощью systemctl процесс корректно стартует, завершается, а после перезагрузки автоматически поднимается.**  
-> sudo systemctl start node-exporter.service | journalctl -u node-exporter.service
-> sudo systemctl stop node-exporter.service | journalctl -u node-exporter.service
-> sudo reboot
+> sudo systemctl start node-exporter.service | journalctl -u node-exporter.service  
+> sudo systemctl stop node-exporter.service | journalctl -u node-exporter.service  
+> sudo reboot  
 > systemctl status node-exporter.service  
 
 **2. Приведите несколько опций, которые вы бы выбрали для базового мониторинга хоста по CPU, памяти, диску и сети.**  
 > node_cpu_guest_seconds_total Seconds the CPUs spent in guests (VMs) for each mode.  
 > node_cpu_seconds_total Seconds the CPUs spent in each mode.  
-> curl http://localhost:9100/metrics 2> /dev/null | grep ^node_cpu
+> curl http://localhost:9100/metrics 2> /dev/null | grep ^node_cpu  
 
 > node_memory_Active_anon_bytes Memory information field Active_anon_bytes.  
 > node_memory_Active_bytes Memory information field Active_bytes.  
@@ -154,9 +154,9 @@ NE_ARG=--help
 > Согласно http://manpages.ubuntu.com/manpages/focal/man1/systemd-detect-virt.1.html  
 > systemd умеет распознавать запуск в вируальной среде:  
 > systemd-detect-virt  
-> oracle
+> oracle  
 > Если система загружена недавно, соответствующая запись есть в dmesg  
-> dmesg | grep oracle
+> dmesg | grep oracle  
 > [   11.779740] systemd[1]: Detected virtualization oracle.  
 
 **5. Как настроен sysctl fs.nr_open на системе по-умолчанию? Узнайте, что означает этот параметр.  
