@@ -34,4 +34,4 @@ filename: /
 Получение: 0 мс
 ```
 **2.3 Приложите скриншот консоли браузера в ответ.**  
-[stackoverflow](img/stackoverflow.png)  
+![stackoverflow](img/stackoverflow.png)  
