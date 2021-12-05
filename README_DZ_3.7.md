@@ -104,12 +104,12 @@ bond0            UP             e6:b6:ef:2e:29:11 <BROADCAST,MULTICAST,MASTER,UP
 
 **7.1 Как проверить ARP таблицу в Linux, Windows?**  
 > Linux: ip neigh show  
-> Windows: arp -a
+> Windows: Get-NetNeighbor
 
 **7.2 Как очистить ARP кеш полностью?**  
 > Linux: ip neigh flush all  
-> Windows: arp -d *  
+> Windows: Remove-NetNeighbor  
 
 **7.3 Как из ARP таблицы удалить только один нужный IP?**  
 > Linux: ip neigh del inet_addr  
-> Windows: arp -d inet_addr
+> Windows: Remove-NetNeighbor -IPAddress inet_addr
