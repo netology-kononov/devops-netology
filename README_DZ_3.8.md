@@ -1,3 +1,56 @@
+**1. Подключитесь к публичному маршрутизатору в интернет. Найдите маршрут к вашему публичному IP.**  
+```commandline
+route-views>show ip route 93.123.224.0 255.255.224.0
+Routing entry for 93.123.224.0/19
+  Known via "bgp 6447", distance 20, metric 0
+  Tag 6939, type external
+  Last update from 64.71.137.241 5w3d ago
+  Routing Descriptor Blocks:
+  * 64.71.137.241, from 64.71.137.241, 5w3d ago
+      Route metric is 0, traffic share count is 1
+      AS Hops 2
+      Route tag 6939
+      MPLS label: none
+
+route-views>show bgp 93.123.224.0 255.255.224.0
+BGP routing table entry for 93.123.224.0/19, version 1220386377
+Paths: (5 available, best #5, table default)
+  Not advertised to any peer
+  Refresh Epoch 3
+  3303 6939 35539
+    217.192.89.50 from 217.192.89.50 (138.187.128.158)
+      Origin IGP, localpref 100, valid, external
+      Community: 3303:1006 3303:1021 3303:1030 3303:3067 6939:7154 6939:8233 6939:9002
+      path 7FE01CD4D6F8 RPKI State not found
+      rx pathid: 0, tx pathid: 0
+  Refresh Epoch 1
+  1351 6939 35539
+    132.198.255.253 from 132.198.255.253 (132.198.255.253)
+      Origin IGP, localpref 100, valid, external
+      path 7FE108F88FF0 RPKI State not found
+      rx pathid: 0, tx pathid: 0
+  Refresh Epoch 1
+  3267 35539
+    194.85.40.15 from 194.85.40.15 (185.141.126.1)
+      Origin IGP, metric 0, localpref 100, valid, external
+      path 7FE101C554F0 RPKI State not found
+      rx pathid: 0, tx pathid: 0
+  Refresh Epoch 1
+  20130 6939 35539
+    140.192.8.16 from 140.192.8.16 (140.192.8.16)
+      Origin IGP, localpref 100, valid, external
+      path 7FE188050908 RPKI State not found
+      rx pathid: 0, tx pathid: 0
+  Refresh Epoch 1
+  6939 35539
+    64.71.137.241 from 64.71.137.241 (216.218.252.164)
+      Origin IGP, localpref 100, valid, external, best
+      unknown transitive attribute: flag 0xE0 type 0x20 length 0xC
+        value 0000 21B7 0000 0777 0000 21B7
+      path 7FE0CE96A290 RPKI State not found
+      rx pathid: 0, tx pathid: 0x0
+```
+
 **2. Создайте dummy0 интерфейс в Ubuntu. Добавьте несколько статических маршрутов. Проверьте таблицу маршрутизации.**  
 > Поскольку в Ububntu менеджер сети не поддерживает устройства типа dummy, 
 > устройство типа dummy было создано с помощью конфигурационного файла^ /etc/network/interfaces.d/dummy0  
