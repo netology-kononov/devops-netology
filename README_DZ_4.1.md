@@ -3,10 +3,10 @@
 | --- | --- | --- |  
 | `c` | a+b | Переменная определяется как строка последовательностью символов a+b |  
 | `d` | 1+2 | Тип переменных a и b определяется как строковый, переменная c получается конкатенацией значений переменных a, b и символа "+" |  
-| `e` | 3 | Bash интерпретирует выражение  $((expression)) как арифметическое. Arithmetic expansion allows the evaluation of an arithmetic expression and the substitution of the result.  The format for arithmetic expansion is: $((expression)) |  
+| `e` | 3 | Bash интерпретирует выражение  $((expression)) как арифметическое. Цитата из man bash: Arithmetic expansion allows the evaluation of an arithmetic expression and the substitution of the result.  The format for arithmetic expansion is: $((expression)) |  
 
 **2.1 Что необходимо сделать, чтобы его исправить?**  
-> Нудно в первой строке установить вторую закрывающую скобку:  
+> Нужно в первой строке установить вторую закрывающую скобку:  
 > while ((1==1))  
 
 **2.2 Необходимо написать скрипт.**  
