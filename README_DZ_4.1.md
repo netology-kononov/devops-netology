@@ -41,3 +41,39 @@ do
         done
 done
 ```
+
+**4. Нужно написать локальный хук для git, который будет проверять, что сообщение в коммите содержит код текущего задания в квадратных скобках и количество символов в сообщении не превышает 30.**  
+> vi .git/hooks/commit-msg  
+> с синтаксисом bash:
+```
+#!/usr/bin/env bash
+
+msg=$(cat $1)
+if ! [[ "${msg}" =~ .*\[.+\].* ]]
+then
+        echo Incorrect format. Square brackets required. ${msg}
+        exit 1
+fi
+if (( ${#msg} >= 30 ))
+then
+        echo Incorrect size. Less then 30 required. ${#msg}
+        exit 2
+fi
+```
+> с синтексисом POSIX:
+```
+#!/bin/sh
+
+msg=$(cat $1)
+if ! echo "${msg}" | grep -qP "\[.+\]"
+then
+        echo Incorrect format. Square brackets required. ${msg}
+        exit 1
+fi
+if [ ${#msg} -ge 30 ]
+then
+        echo Incorrect size. Less then 30 required. ${#msg}
+        exit 2
+fi
+```
+> chmod +x commit-msg
