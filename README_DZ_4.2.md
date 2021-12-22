@@ -114,7 +114,7 @@ from github import Github
 
 config_file = "config.cfg"
 local_repo_dir = "~/netology/rebase-merge"
-commit_message = "Commit Msg"
+commit_message = "Commit Message"
 github_token = "ghp_ggL*************************cZ0n3OKrBx"
 github_repo = "netology-kononov/rebase-merge"
 branch_name = "dev"
@@ -126,7 +126,7 @@ else:
     print("No Arguments (pull request title) found")
     sys.exit()
 
-bash_unzip = "gunzip -f " + zip_file + ".gz"
+bash_unzip = "gunzip -f " + config_file + ".gz"
 os.popen(bash_unzip)
 
 local_repo = git.Repo(local_repo_dir)
@@ -145,7 +145,7 @@ pr
 No Arguments (pull request title) found
 ~/netology/rebase-merge$
 ~/netology/rebase-merge$
-~/netology/rebase-merge$ ./github_auto.py Final
-Enter passphrase for key '/home/user/.ssh/id_rsa':
+~/netology/rebase-merge$ ./github_auto.py "New config"
+Enter passphrase for key '/home/ubun/.ssh/id_rsa':
 ~/netology/rebase-merge$
 ```
