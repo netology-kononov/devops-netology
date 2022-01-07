@@ -178,7 +178,16 @@ systemctl restart nginx
 ```
 
 **10. Поместите скрипт в crontab, чтобы сертификат обновлялся какого-то числа каждого месяца в удобное для вас время.**  
-> Сертификат будет обновляться в 2:00 7-го числа каждого месяца  
+> Сертификат будет обновляться в 22:25 7-го числа каждого месяца  
 > crontab -e  
 > Добавлена новая строка:  
-> 0 2 7 * * /etc/ssl/test.example.com.cert.sh > /dev/null 2>&1
+> 25 22 7 * * /etc/ssl/test.example.com.cert.sh > /dev/null 2>&1
+> Журнал выполнения задачи crontab (/var/log/syslog):
+```
+Jan  7 22:25:01 vagrant-term CRON[1224]: (root) CMD (/etc/ssl/test.example.com.cert.sh > /dev/null 2>&1)
+Jan  7 22:25:02 vagrant-term systemd[1]: Stopping A high performance web server and a reverse proxy server...
+Jan  7 22:25:02 vagrant-term systemd[1]: nginx.service: Succeeded.
+Jan  7 22:25:02 vagrant-term systemd[1]: Stopped A high performance web server and a reverse proxy server.
+Jan  7 22:25:02 vagrant-term systemd[1]: Starting A high performance web server and a reverse proxy server...
+Jan  7 22:25:02 vagrant-term systemd[1]: Started A high performance web server and a reverse proxy server.
+```
