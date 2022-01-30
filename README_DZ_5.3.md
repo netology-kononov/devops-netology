@@ -21,7 +21,7 @@
 | Gitlab сервер для реализации CI/CD процессов и приватный (закрытый) Docker Registry                                                    | Подходит    | Gitlab и Docker Registry имеют преконфигурированные образы Docker, а также инсталляция с помощью Docker является одним из рекомендованных разработчиками способов инсталляции                                                                           |
 
 **3. Отобразите листинг и содержание файлов в /data контейнера.**  
-> Трюк для запуска контейнера без полезной нагрузки:
+> Трюк для запуска контейнера без полезной нагрузки:  
 > docker run --rm --name centos -dv ~/netology/docker/data:/data centos tail -f /dev/null  
 > docker run --rm --name debian -dv ~/netology/docker/data:/data debian tail -f /dev/null  
 ```commandline
