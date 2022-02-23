@@ -74,7 +74,7 @@ Referenced by:
 Access method: heap
 ```
 **2.3 Приведите SQL-запрос для выдачи списка пользователей с правами над таблицами test_db**  
-> SELECT * FROM information_schema.role_table_grants WHERE table_catalog='test_db' AND table_schema=';  
+> SELECT * FROM information_schema.role_table_grants WHERE table_catalog='test_db' AND table_schema='public';  
 
 **2.4 Приведите список пользователей с правами над таблицами test_db**  
 ```commandline
