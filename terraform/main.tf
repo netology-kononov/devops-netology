@@ -55,7 +55,7 @@ resource "yandex_compute_instance" "test-7-3-foreach" {
   name                      = "test-7-3-${each.key}"
   zone                      = "ru-central1-a"
   hostname                  = "test-7-3-${each.key}.netology.cloud"
-  for_each                  = local.instances_by_platform
+  for_each                  = local.cpu_by_platform
   platform_id               = each.key
 
   lifecycle {
@@ -95,7 +95,7 @@ locals {
     stage = "standard-v1"
     prod = "standard-v2"
   }
-  instances_by_platform = {
+  cpu_by_platform = {
     "standard-v1" = 2
     "standard-v2" = 4
   }

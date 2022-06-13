@@ -2,7 +2,7 @@ output "YC_region" {
   value = "${yandex_compute_instance.test-7-3[*].zone}"
 }
 
-output "Privave_IP" {
+output "Private_IP" {
   value = "${yandex_compute_instance.test-7-3[*].network_interface[0].ip_address}"
 }
 
