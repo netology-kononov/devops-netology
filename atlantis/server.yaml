@@ -1,0 +1,13 @@
+repos:
+- id: github.com/netology-kononov/devops-netology
+  allowed_overrides: [workflow]
+
+workflows:
+  default:
+    plan:
+      steps:
+      - plan:
+          extra_args: ["-lock", "false"]
+    apply:
+      steps:
+      - apply
