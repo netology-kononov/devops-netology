@@ -53,12 +53,11 @@ package main
 
 import "testing"
 
-func testMain(t *testing.T) {
-	x := []int{99, 11, 2, 22, 66, 110}
+func TestSmallest(t *testing.T) {
+	x := []int{99, 11, 88, 22, 77, 33, 66, 44, 2, 22, 44, 66, 88, 110}
 	main_min := smallest(x)
 	if main_min != 2 {
 		t.Error("Должно быть 2, получилось", main_min)
 	}
 }
-
 ```
