@@ -1,7 +1,7 @@
-#Репозитарий расположен:  
+# Репозитарий расположен: #  
 https://github.com/netology-kononov/devops-netology-ansible-01
 
-#Ответы на вопросы:  
+# Ответы на вопросы: #  
 **1. Где расположен файл с some_fact из второго пункта задания?**  
 > https://github.com/netology-kononov/devops-netology-ansible-01/blob/master/group_vars/all/examp.yml
 
